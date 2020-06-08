@@ -1,5 +1,7 @@
 package ru.nesterenko.part01.lesson02.task02;
 
+import java.math.BigDecimal;
+
 /**
  * В данном классе реализуется расчет заработной платы после вычета НДФЛ
  *
@@ -7,22 +9,23 @@ package ru.nesterenko.part01.lesson02.task02;
  * @author  Igor Nesterenko
  */
 public class Salary {
-    final double TAX = 0.13;
-    final double salaryWithTax;
+    final BigDecimal salaryWithTax;
 
     Salary(final double sal) {
-        salaryWithTax = sal;
+        salaryWithTax = new BigDecimal(String.valueOf(sal));
     }
+}
 
-    final double getSalaryWithTax () {
-        return salaryWithTax;
-    }
 
-    final double getTAX() {
-        return TAX;
-    }
+class SalaryCalculate {
+    BigDecimal init;
+    double taxa;
+    String salRes;
+    String N;
 
-    final double getSalaryFreeTax () {
-        return (salaryWithTax - (salaryWithTax * TAX));
+    N = {String.valueOf(taxa)};
+    SalaryCalculate(Salary name, double tax) {
+       salRes = new BigDecimal(String.valueOf("init") * String.valueOf("tax"));
+       taxa = tax;
     }
 }

@@ -1,4 +1,4 @@
-package part01.lesson03.task02;
+package ru.nesterenko.part01.lesson03.task02;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
@@ -21,7 +21,7 @@ public class SalaryDemo {
         SalaryCalculate salary = new SalaryCalculate();
 
         System.out.println("Заработная плата Джона после вычета НДФЛ: "
-                            + salary.calculate(John.salary, tax) + " рублей");
+                + salary.calculate(John.salary, tax) + " рублей");
     }
 }
 
@@ -29,8 +29,8 @@ public class SalaryDemo {
 /**
  * Класс реализует объект с указанием размера заработной платы до вычета НДФЛ
  *
- * @version     2.0 08 June 2020
- * @author      Igor Nesterenko
+ * @author Igor Nesterenko
+ * @version 2.0 08 June 2020
  */
 class Salary {
     BigDecimal salary;
@@ -44,8 +44,8 @@ class Salary {
 /**
  * Класс реализует расчет заработной платы по передаваемому значению ЗП до вычета НДФЛ и размера НДФЛ
  *
- * @version     2.0 08 June 2020
- * @author      Igor Nesterenko
+ * @author Igor Nesterenko
+ * @version 2.0 08 June 2020
  */
 class SalaryCalculate {
 

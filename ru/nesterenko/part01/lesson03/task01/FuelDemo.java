@@ -18,7 +18,7 @@ public class FuelDemo {
         Cost barlCost = new Cost();
 
         System.out.println("Стоимость " + fuelValue + " литров топива: "
-                            + barlCost.costCalculete(barl.value, fuelPrice) + " рублей");
+                + barlCost.costCalculete(barl.value, fuelPrice) + " рублей");
     }
 }
 
@@ -26,8 +26,8 @@ public class FuelDemo {
 /**
  * Класс реализует объект заданного объема
  *
- * @version     2.0 08 June 2020
- * @author      Igor Nesterenko
+ * @author Igor Nesterenko
+ * @version 2.0 08 June 2020
  */
 class Fuel {
     double value;
@@ -41,12 +41,12 @@ class Fuel {
 /**
  * Класс реализует расчет стоимости топлава по объему и стоимоти толива
  *
- * @version     2.0 08 June 2020
- * @author      Igor Nesterenko
+ * @author Igor Nesterenko
+ * @version 2.0 08 June 2020
  */
 class Cost {
 
-    double costCalculete (double v, double fP) {
+    double costCalculete(double v, double fP) {
 
         return (v * fP);
     }

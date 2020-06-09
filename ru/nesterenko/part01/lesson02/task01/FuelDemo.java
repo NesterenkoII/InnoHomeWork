@@ -2,10 +2,7 @@ package ru.nesterenko.part01.lesson02.task01;
 
 public class FuelDemo {
     public static void main(String[] args) {
-        double fuelValue, h = 55.9;
-        int[] a = new int[3];
-        String s = "999";
-        s = h.toString();
+        double fuelValue;
 
         fuelValue = 40;
         Fuel fP = new Fuel(3);

@@ -9,23 +9,18 @@ import java.math.BigDecimal;
  * @author  Igor Nesterenko
  */
 public class Salary {
-    final BigDecimal salaryWithTax;
+    BigDecimal salaryWithTax;
 
-    Salary(final double sal) {
-        salaryWithTax = new BigDecimal(String.valueOf(sal));
+    Salary(String sal) {
+        salaryWithTax = new BigDecimal(sal);
     }
 }
 
 
 class SalaryCalculate {
-    BigDecimal init;
-    double taxa;
-    String salRes;
-    String N;
 
-    N = {String.valueOf(taxa)};
-    SalaryCalculate(Salary name, double tax) {
-       salRes = new BigDecimal(String.valueOf("init") * String.valueOf("tax"));
-       taxa = tax;
+    public static BigDecimal salaryCalculate (BigDecimal sal, double tax) {
+        return sal.multiply(BigDecimal.valueOf(1-tax));
     }
+
 }

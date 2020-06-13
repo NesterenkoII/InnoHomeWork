@@ -1,9 +1,9 @@
-package ru.nesterenko.part01.lesson02.task01;
+package ru.nesterenko.part01.lesson03.task01;
 
 /**
  * Класс реализует вычисление стоимости бензина при указании его объема
  *
- * @version 1.0 13 June 2020
+ * @version 13 June 2020
  * @author  Igor Nesterenko
  */
 public class Fuel {

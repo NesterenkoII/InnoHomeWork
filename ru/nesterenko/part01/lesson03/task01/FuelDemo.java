@@ -1,53 +1,28 @@
-package part01.lesson03.task01;
+package ru.nesterenko.part01.lesson03.task01;
 
 import java.util.Scanner;
 
+/**
+ *Написать программу, которая считает стоимость бензина (на вход программе передается кол-во литров, на выходе печатается
+ * стоимость). Пример: стоимость литра бензина 43 рубля. На вход подается 50, на выходе должно быть 2150 руб.
+ *
+ * @version 2.0 13 June 2020
+ * @author  Igor Nesterenko
+ */
 public class FuelDemo {
     public static void main(String[] args) {
-        double fuelValue;
-        double fuelPrice;
+        Fuel barrel = new Fuel("barrel");
 
         Scanner enter = new Scanner(System.in);
         System.out.print("Введите количество топлива в литрах: ");
-        fuelValue = enter.nextDouble();
+        barrel.setFuelValue(enter.nextDouble());
 
         System.out.print("введите стоимость одного литра: ");
-        fuelPrice = enter.nextDouble();
+        barrel.setFuelPrice(enter.nextDouble());
 
-        Fuel barl = new Fuel(fuelValue);
-        Cost barlCost = new Cost();
+        enter.close();
 
-        System.out.println("Стоимость " + fuelValue + " литров топива: "
-                + barlCost.costCalculete(barl.value, fuelPrice) + " рублей");
-    }
-}
-
-
-/**
- * Класс реализует объект заданного объема
- *
- * @author Igor Nesterenko
- * @version 2.0 08 June 2020
- */
-class Fuel {
-    double value;
-
-    Fuel(double val) {
-        value = val;
-    }
-}
-
-
-/**
- * Класс реализует расчет стоимости топлава по объему и стоимоти толива
- *
- * @author Igor Nesterenko
- * @version 2.0 08 June 2020
- */
-class Cost {
-
-    double costCalculete(double v, double fP) {
-
-        return (v * fP);
+        System.out.println("Стоимость " + barrel.getFuelValue() + " литров топива: "
+                + CalculateCostOfGoods.calculateFuelCost(barrel.getFuelValue(), barrel.getFuelPrice()) + " рублей");
     }
 }

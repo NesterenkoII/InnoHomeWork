@@ -2,7 +2,13 @@ package ru.nesterenko.part01.lesson04.task01;
 
 import java.util.Scanner;
 
-public class MinNumer {
+/**
+ * Написать программу для поиска минимального из двух чисел.
+ *
+ * @version 1.0 13 June 2020
+ * @author  Igor Nesterenko
+ */
+public class MinNumerDemo {
     public static void main(String[] args) {
         double num1;
         double num2;

@@ -1,5 +1,11 @@
 package ru.nesterenko.part01.lesson04.task02;
 
+/**
+ * Написать программу для вывода на экран таблицы умножения.
+ *
+ * @version 1.0 13 June 2020
+ * @author  Igor nesterenko
+ */
 public class MultiplicationTable {
     public static void main(String[] args) {
         int[][] multiplicationTable = new int[9][9];

@@ -3,54 +3,24 @@ package ru.nesterenko.part01.lesson03.task02;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+/**
+ * Написать программу, которая считает зарплату «на руки» (на вход программе передается величина зарплаты, на выходе
+ * печатается зарплата за вычетом 13% (НДФЛ). Пример: на вход подается 70000, на выходе печатается 60900 руб.
+ *
+ * @version 2.0 13 June 2020
+ * @author  Igor Nestrenko
+ */
 public class SalaryDemo {
     public static void main(String[] args) {
-        double tax;
-        String salVal;
+        Person linkPerson;
+        linkPerson = ShowMenu.creationOfPerson();
 
-        Scanner enter = new Scanner(System.in);
-        System.out.print("Введите размер заработной платы в рублях: ");
-        salVal = enter.nextLine();
+        System.out.println("Имя - " + linkPerson.getName() + "\n" +
+                "Возраст - " + linkPerson.getAge() + " лет" + "\n" +
+                "Должность - " + linkPerson.getPosition() + "\n" +
+                "Опыт работы - " + linkPerson.getWorkingExperience() + " лет" + "\n" +
+                "З/П до вычета НДФЛ - " + linkPerson.getSalary() + " рублей" + "\n" +
+                "З/П после вычета НДФЛ - " + FinanceCalculate.salaryFreeTax(linkPerson.getSalary()));
 
-        System.out.print("Введите размер НДФЛ: ");
-        tax = enter.nextDouble();
-
-        enter.close();
-
-        Salary John = new Salary(salVal);
-        SalaryCalculate salary = new SalaryCalculate();
-
-        System.out.println("Заработная плата Джона после вычета НДФЛ: "
-                + salary.calculate(John.salary, tax) + " рублей");
-    }
-}
-
-
-/**
- * Класс реализует объект с указанием размера заработной платы до вычета НДФЛ
- *
- * @author Igor Nesterenko
- * @version 2.0 08 June 2020
- */
-class Salary {
-    BigDecimal salary;
-
-    Salary(String s) {
-        salary = new BigDecimal(s);
-    }
-}
-
-
-/**
- * Класс реализует расчет заработной платы по передаваемому значению ЗП до вычета НДФЛ и размера НДФЛ
- *
- * @author Igor Nesterenko
- * @version 2.0 08 June 2020
- */
-class SalaryCalculate {
-
-    BigDecimal calculate(BigDecimal sal, double t) {
-
-        return sal.multiply(BigDecimal.valueOf(1 - t));
     }
 }

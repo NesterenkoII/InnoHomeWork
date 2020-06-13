@@ -2,6 +2,13 @@ package ru.nesterenko.part01.lesson04.task03;
 
 import java.util.Scanner;
 
+/**
+ * Написать программу, которая описывает введенное число.
+ * Отрицательное оно число или положительное (или нулевое), чётное или нечётное.
+ *
+ * @version 2.0 13 June 2020
+ * @author
+ */
 public class DescriptionNumberDemo {
     public static void main(String[] args) {
         double number;
@@ -29,19 +36,19 @@ public class DescriptionNumberDemo {
 
             switch (choice) {
                 case 1:
-                    System.out.println(DescriptinNumber.oddNumber(number));
+                    System.out.println(DescriptionOfNumber.oddNumber(number));
                     System.out.println();
                     break;
                 case 2:
-                    System.out.println(DescriptinNumber.wholeNumber(number));
+                    System.out.println(DescriptionOfNumber.wholeNumber(number));
                     System.out.println();
                     break;
                 case 3:
-                    System.out.println(DescriptinNumber.positiveNumber(number));
+                    System.out.println(DescriptionOfNumber.positiveNumber(number));
                     System.out.println();
                     break;
                 case 4:
-                    System.out.println(DescriptinNumber.fullDescriptionOfNumber(number));
+                    System.out.println(DescriptionOfNumber.fullDescriptionOfNumber(number));
                     System.out.println();
                     break;
                 default:
@@ -50,42 +57,5 @@ public class DescriptionNumberDemo {
                     choice = 0;
             }
         } while (choice != 0);
-    }
-}
-
-
-class DescriptinNumber {
-
-    static String oddNumber(double num) {
-        if (((num * 10) % 10) != 0) {
-            return "Ни четное, ни нечетное";
-        }
-
-        if ((num % 2) == 0) {
-            return num + " - четное";
-        } else {
-            return num + " - нечетное";
-        }
-    }
-
-    static String wholeNumber(double num) {
-        if (((num * 10) % 10) != 0) {
-            return num + " - дробное";
-        } else return num + " - целое";
-    }
-
-    static String positiveNumber(double num) {
-        if (num > 0) {
-            return num + " - положительное";
-        } else if (num < 0) {
-            return num + " - отрицательное";
-        } else {
-            return num + " - нулевOе или даже нулЕвое =)";
-        }
-
-    }
-
-    static String fullDescriptionOfNumber(double num) {
-        return oddNumber(num) + "\n" + wholeNumber(num) + "\n" + positiveNumber(num);
     }
 }

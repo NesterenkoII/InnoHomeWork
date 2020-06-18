@@ -1,5 +1,11 @@
 package ru.nesterenko.part01.lesson06.task01.transport;
 
+/**
+ * Класс реализует описывает общие кахактеристики транспортных средств
+ *
+ * @version 1.0 18 June 2020
+ * @author  Igor Nesterenko
+ */
 public class Transport {
 
     private String carBrand;

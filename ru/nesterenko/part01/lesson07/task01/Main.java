@@ -52,7 +52,6 @@ public class Main {
                     redSquare.giveDrink(redSquare.drinksArray.get(1));
                     break;
                 case 3:
-                    System.out.println("Выдан Спрайт");
                     redSquare.giveDrink(redSquare.drinksArray.get(2));
                     break;
                 case 4:
@@ -60,6 +59,7 @@ public class Main {
                     System.out.print("Введите сумму для пополнения: ");
                     redSquare.insertMoney(enterChoice.nextDouble());
                     System.out.println("\n");
+                    break;
                 case 0:
                     System.out.println("Выход ...");
                     break;

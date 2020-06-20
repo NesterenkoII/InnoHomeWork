@@ -19,8 +19,9 @@ public class VendingMachine {
     // Проверка наличия напитков в автомате
     void checkDrinkAbailability (Drinks drinkName) {
 
-        if (drinkName.getCount() == 0) {
+        if (drinkName.getCount() <= 0) {
             System.out.println("*** Напитки данной категории закончились! ***");
+            return;
         }
     }
 
@@ -29,6 +30,7 @@ public class VendingMachine {
 
         if (DEPOSIT < drinkName.getPrice()) {
             System.out.println("*** Недостаточно средств. Пополните баланс! ***");
+            return;
         }
     }
 
@@ -38,25 +40,27 @@ public class VendingMachine {
         checkDrinkAbailability(drinkName);
         checkMoneyAvailability(drinkName);
 
-        if (drinkName == Drinks.FANTA) {
+        if (drinkName == Drinks.FANTA && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
             System.out.println("Выдан напиток: " + drinkName.name());
             DEPOSIT -= drinkName.getPrice();
             drinkName.decrementCount();
             return;
         }
 
-        if (drinkName == Drinks.COCA_COLA && drinkName.getPrice() <= DEPOSIT) {
+        if (drinkName == Drinks.COCA_COLA && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
             System.out.println("Выдан напиток: " + drinkName.name());
             DEPOSIT -= drinkName.getPrice();
             drinkName.decrementCount();
             return;
         }
 
-        if (drinkName == Drinks.SPRIT && drinkName.getPrice() <= DEPOSIT) {
+        if (drinkName == Drinks.SPRIT && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
             System.out.println("Выдан напиток: " + drinkName.name());
             DEPOSIT -= drinkName.getPrice();
             drinkName.decrementCount();
+            return;
         }
+        return;
     }
 
     // Для удобного добавление напитков в аппарат

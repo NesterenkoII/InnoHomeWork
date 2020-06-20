@@ -38,7 +38,7 @@ public class ProgressionDemo {
                     System.out.println("Выход ...");
                     break;
                 default:
-                    break;
+                    System.out.println("Выбран несуществующий пункт меню.\n");
             }
         } while (choice != 0);
 

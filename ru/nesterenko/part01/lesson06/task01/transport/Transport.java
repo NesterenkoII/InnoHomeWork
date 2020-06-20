@@ -8,45 +8,22 @@ package ru.nesterenko.part01.lesson06.task01.transport;
  */
 public class Transport {
 
-    private String carBrand;
-    private String carModel;
+    private final String CAR_BRAND;
+    private final String CAR_MODEL;
 
-    private int yearOfManufacture;
-    private int operatingTime;
 
-    private double fuelConsumption;
+    public Transport(String carBrand, String carModel) {
 
-    public Transport(String carBrand, String carModel, int yearOfManufacture,
-              int operatingTime, double fuelConsumption) {
-
-        this.carBrand = carBrand;
-        this.carModel = carModel;
-        this.yearOfManufacture = yearOfManufacture;
-        this.operatingTime = operatingTime;
-        this.fuelConsumption = fuelConsumption;
+        this.CAR_BRAND = carBrand;
+        this.CAR_MODEL = carModel;
     }
 
-    public String getCarBrand() {
-        return carBrand;
+    public String getCAR_BRAND() {
+        return CAR_BRAND;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public String getCAR_MODEL() {
+        return CAR_MODEL;
     }
 
-    public int getYearOfManufacture() {
-        return yearOfManufacture;
-    }
-
-    public int getOperatingTime() {
-        return operatingTime;
-    }
-
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    double getCargoDeliverPrice(Truck truck, double distance) {
-        return truck.getCargoDeliverPrice(distance);
-    }
 }

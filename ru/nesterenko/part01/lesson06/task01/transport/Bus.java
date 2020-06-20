@@ -1,24 +1,33 @@
 package ru.nesterenko.part01.lesson06.task01.transport;
 
-public class Bus extends Transport{
+public class Bus extends Transport implements Driving{
 
-    private int passengerSeatCont;
+    private final int PASSENGER_SEAT_COUNT;
+
     private double oneKmUsingCost;
 
-    public Bus(String carBrand, String carModel, int yearOfManufacture,
-                    int operatingTime, double fuelConsumption, int passengerSeatCont, double oneKmUsingCost) {
-            super(carBrand, carModel, yearOfManufacture,
-                    operatingTime, fuelConsumption);
+    public Bus(String carBrand, String carModel, int passengerSeatCont, double oneKmUsingCost) {
+            super(carBrand, carModel);
 
-            this.passengerSeatCont = passengerSeatCont;
+            this.PASSENGER_SEAT_COUNT = passengerSeatCont;
             this.oneKmUsingCost = oneKmUsingCost;
     }
 
-    public double getPassengersDeliverPrice( double distance) {
-        return distance * oneKmUsingCost;
+    public double getOneKmUsingCost() {
+        return oneKmUsingCost;
     }
 
-    public double getOneTicketPrice(int passengers, double distance) {
-        return (getPassengersDeliverPrice(distance) / passengers);
+    public void setOneKmUsingCost(double oneKmUsingCost) {
+        this.oneKmUsingCost = oneKmUsingCost;
+    }
+
+    public int getPASSENGER_SEAT_COUNT() {
+        return PASSENGER_SEAT_COUNT;
+    }
+
+    @Override
+    public void iAmGoing(double km) {
+        System.out.print("Автобус едет " + km + " km");
+        System.out.println();
     }
 }

@@ -16,7 +16,7 @@ public class DescriptionNumberDemo {
 
 
         Scanner enter = new Scanner(System.in);
-        System.out.println("Oписания числа");
+        System.out.println("Описание числа");
         System.out.print("Введите число: ");
         number = enter.nextDouble();
 
@@ -51,10 +51,13 @@ public class DescriptionNumberDemo {
                     System.out.println(DescriptionOfNumber.fullDescriptionOfNumber(number));
                     System.out.println();
                     break;
-                default:
+                case 0:
                     System.out.println("Выход ...");
                     System.out.println();
                     choice = 0;
+                    break;
+                default:
+                    System.out.println("Выбранного пункта нет в меню!\n");
             }
         } while (choice != 0);
     }

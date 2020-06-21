@@ -9,8 +9,12 @@ package ru.nesterenko.part01.lesson07.task01.VendingMachine;
  */
 public enum Drinks {
         FANTA(29),
-        COCA_COLA(33),
-        SPRIT(35);
+        PEPSI(33),
+        SPRIT(35),
+        WATER(17),
+        JUICE(52);
+        //BEAR(70);
+
 
         private double price;
         private int count = 0;

@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * Класс реализует вендинговый аппарат с напитками
  * методы выдачи напитков, проверки баланса и наличия напитков,
- * пополнения баланса
+ * пополнения баланса.
  *
- * @version 1.0 20 June 2020
+ * @version 2.0 21 June 2020
  * @author  Igoe Nesterenko
  */
 public class VendingMachine {
@@ -68,6 +68,6 @@ public class VendingMachine {
     // Метод возвращает общее колическво напитков в аппарате
     // Использовался для отладки программы
     public int getDrinksTotalCount(Drinks drinkName) {
-        return (drinkName.FANTA.getCount() + drinkName.COCA_COLA.getCount() + drinkName.SPRIT.getCount());
+        return (drinkName.FANTA.getCount() + drinkName.PEPSI.getCount() + drinkName.SPRIT.getCount());
     }
 }

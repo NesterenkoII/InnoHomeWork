@@ -29,6 +29,7 @@ public class Main {
 
         VendingMachine redSquare = new VendingMachine();
         int choice = 0;
+        double someVar = 0;
 
         Scanner enterChoice = new Scanner(System.in);
 
@@ -38,7 +39,7 @@ public class Main {
 
             redSquare.drinksArray.get(0).setCount(5);
             redSquare.drinksArray.get(1).setCount(2);
-            redSquare.drinksArray.get(2).setCount(1);
+            redSquare.drinksArray.get(2).setCount(0);
 
         do {
             new Menu().drawVendingMachineStatMenu(redSquare);
@@ -55,10 +56,9 @@ public class Main {
                     redSquare.giveDrink(redSquare.drinksArray.get(2));
                     break;
                 case 4:
-                    System.out.println("Пополнение баланса...");
-                    System.out.print("Введите сумму для пополнения: ");
+                    System.out.printf("         Введите сумму: ");
                     redSquare.insertMoney(enterChoice.nextDouble());
-                    System.out.println("\n");
+                    System.out.println();
                     break;
                 case 0:
                     System.out.println("Выход ...");

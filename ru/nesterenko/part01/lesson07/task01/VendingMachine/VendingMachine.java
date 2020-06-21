@@ -21,7 +21,6 @@ public class VendingMachine {
 
         if (drinkName.getCount() <= 0) {
             System.out.println("*** Напитки данной категории закончились! ***");
-            return;
         }
     }
 
@@ -37,47 +36,19 @@ public class VendingMachine {
     // Метод осуществляет выдачу напитка,
     public void giveDrink(Drinks drinkName) {
 
-        checkDrinkAbailability(drinkName);
         checkMoneyAvailability(drinkName);
+        checkDrinkAbailability(drinkName);
 
-        if (drinkName == Drinks.FANTA && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
+        if (drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
             System.out.println("Выдан напиток: " + drinkName.name());
             DEPOSIT -= drinkName.getPrice();
             drinkName.decrementCount();
-            return;
         }
-
-        if (drinkName == Drinks.COCA_COLA && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
-            System.out.println("Выдан напиток: " + drinkName.name());
-            DEPOSIT -= drinkName.getPrice();
-            drinkName.decrementCount();
-            return;
-        }
-
-        if (drinkName == Drinks.SPRIT && drinkName.getPrice() <= DEPOSIT && drinkName.getCount() > 0) {
-            System.out.println("Выдан напиток: " + drinkName.name());
-            DEPOSIT -= drinkName.getPrice();
-            drinkName.decrementCount();
-            return;
-        }
-        return;
     }
 
     // Для удобного добавление напитков в аппарат
     public void addDrink(Drinks drinkName, int countOfDrinks) {
         if (drinkName == Drinks.FANTA) {
-            for (int i = 0; i < countOfDrinks; i++) {
-                drinkName.incrementCount();
-            }
-        }
-
-        if (drinkName == Drinks.COCA_COLA) {
-            for (int i = 0; i < countOfDrinks; i++) {
-                drinkName.incrementCount();
-            }
-        }
-
-        if (drinkName == Drinks.SPRIT) {
             for (int i = 0; i < countOfDrinks; i++) {
                 drinkName.incrementCount();
             }

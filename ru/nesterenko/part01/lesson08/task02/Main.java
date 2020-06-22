@@ -1,4 +1,4 @@
-package ru.nesterenko.part01.lesson08.lecture.task02;
+package ru.nesterenko.part01.lesson08.task02;
 
 
 /**

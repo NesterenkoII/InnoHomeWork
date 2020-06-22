@@ -1,4 +1,4 @@
-package ru.nesterenko.part01.lesson08.lecture.task01;
+package ru.nesterenko.part01.lesson08.task01;
 
 import java.util.Scanner;
 

@@ -19,9 +19,11 @@ import ru.nesterenko.part01.lesson06.task01.transport.Truck;
  * @author  Igor Nesterenko
  */
 public class Main {
-    public static void main(String[] args) {
-        double profit = 0;
 
+    public static void main(String[] args) {
+
+        TransportCompany DHL;
+        double profit = 0;
         double distanceForTruck;
         double distanceForBus;
         {
@@ -29,7 +31,7 @@ public class Main {
             distanceForBus = 3000.0;
         }
 
-        TransportCompany DHL = new TransportCompany();
+        DHL = new TransportCompany();
 
         DHL.transports.add(0, new Truck("MAN", "M11", 79));
         DHL.transports.add(1, new Bus("ISUZU", "I22", 48, 37));

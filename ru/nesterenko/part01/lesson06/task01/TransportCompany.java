@@ -11,7 +11,7 @@ import java.util.List;
  * @version 1.0 18 June 2020
  * @author  Igor Nesterenko
  */
-public class TransportCompany implements DeliveringPeopleAndCargo {
+public class TransportCompany implements Delivering {
 
         List <Transport> transports = new ArrayList<Transport>();
 
@@ -30,10 +30,5 @@ public class TransportCompany implements DeliveringPeopleAndCargo {
                 }
 
                 return 0;
-        }
-
-        @Override
-        public double getOneTicketPrice(Bus bus, double distance) {
-                return (bus.getOneKmUsingCost() * distance / bus.getPASSENGER_SEAT_COUNT());
         }
 }

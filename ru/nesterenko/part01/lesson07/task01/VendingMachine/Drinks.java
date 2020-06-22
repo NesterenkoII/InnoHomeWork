@@ -4,7 +4,7 @@ package ru.nesterenko.part01.lesson07.task01.VendingMachine;
  * Перечисление напитков, кодержащее количество, цену и методы для извлечения
  * и установки значений для данных полей
  *
- * @version 1.0 20 June 2020
+ * @version 2.0 22 June 2020
  * @author  Igor Nesterenko
  */
 public enum Drinks {
@@ -13,8 +13,6 @@ public enum Drinks {
         SPRIT(35),
         WATER(17),
         JUICE(52);
-        //BEAR(70);
-
 
         private double price;
         private int count = 0;
@@ -27,23 +25,11 @@ public enum Drinks {
             return price;
         }
 
-        public void setPrice(double price) {
-            this.price = price;
+        public void setCount(int count) {
+        this.count = count;
         }
 
         public int getCount() {
             return count;
-        }
-
-        public void setCount(int count) {
-            this.count = count;
-        }
-
-        public void incrementCount() {
-            this.count++;
-        }
-
-        public void decrementCount() {
-            this.count--;
         }
 }

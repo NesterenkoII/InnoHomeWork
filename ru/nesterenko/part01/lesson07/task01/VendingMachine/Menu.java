@@ -6,7 +6,7 @@ package ru.nesterenko.part01.lesson07.task01.VendingMachine;
  * В автоматическом режиме прорисовывает элементы меню
  * в зависимости от загрузки автомата
  *
- * @version 2.1 21 June 2020
+ * @version 2.2 22 June 2020
  * @author  Igor Nestsenko
  */
 public class Menu {
@@ -22,14 +22,25 @@ public class Menu {
         System.out.println("|Наименование    |   Цена, руб.   | Остаток, шт |");
         System.out.println("|----------------+----------------+-------------|");
 
-        for (Drinks drink: vendingMachine.drinksArray) {
-            System.out.printf("| %1d - %2s \t |\t( %4.1f )      |     %2d      |\n",
-                    (i + 2),
-                    vendingMachine.drinksArray.get(i).name(),
-                    vendingMachine.drinksArray.get(i).getPrice(),
-                    vendingMachine.drinksArray.get(i).getCount());
-            i++;
-        }
+        System.out.println("| 2 - " + vendingMachine.getDrinksList().get(0).name()
+                + "      |      " + vendingMachine.getDrinksList().get(0).getPrice()
+                + "      |     " + vendingMachine.getDrinksList().get(0).getCount() + "       |");
+
+        System.out.println("| 3 - " + vendingMachine.getDrinksList().get(1).name()
+                + "      |      " + vendingMachine.getDrinksList().get(1).getPrice()
+                + "      |     " + vendingMachine.getDrinksList().get(1).getCount() + "       |");
+
+        System.out.println("| 4 - " + vendingMachine.getDrinksList().get(2).name()
+                + "      |      " + vendingMachine.getDrinksList().get(2).getPrice()
+                + "      |     " + vendingMachine.getDrinksList().get(2).getCount() + "       |");
+
+        System.out.println("| 5 - " + vendingMachine.getDrinksList().get(3).name()
+                + "      |      " + vendingMachine.getDrinksList().get(3).getPrice()
+                + "      |     " + vendingMachine.getDrinksList().get(3).getCount() + "       |");
+
+        System.out.println("| 6 - " + vendingMachine.getDrinksList().get(4).name()
+                + "      |      " + vendingMachine.getDrinksList().get(4).getPrice()
+                + "      |     " + vendingMachine.getDrinksList().get(4).getCount() + "       |");
 
         System.out.println("|===============================================|");
         System.out.println("            Текущий баланс: " + vendingMachine.getDEPOSIT() + " рублей                 ");

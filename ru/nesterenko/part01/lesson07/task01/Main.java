@@ -21,34 +21,23 @@ import java.util.Scanner;
  * Для хранения напитков предлагается использовать enum. У напитка должна быть цена и название.
  * Для упрощения считаем, что количество напитков не ограничено.
  *
- * @author  2.0 21 June 2020
+ * @author  3.0 22 June 2020
  * @author  Igor Nesterenko
  */
 public class Main {
     public static void main (String[] Args) {
 
-        VendingMachine redSquare = new VendingMachine();
+        VendingMachine redSquare;
+        Scanner enterChoice;
+        int choice;
 
-        int choice = 0;
-        double someVar = 0;
-
-        Scanner enterChoice = new Scanner(System.in);
-
-        redSquare.drinksArray.add(0, Drinks.FANTA);
-        redSquare.drinksArray.add(1, Drinks.PEPSI);
-        redSquare.drinksArray.add(2, Drinks.SPRIT);
-        redSquare.drinksArray.add(3, Drinks.WATER);
-        redSquare.drinksArray.add(4, Drinks.JUICE);
-        {
-            redSquare.drinksArray.get(0).setCount(5);
-            redSquare.drinksArray.get(1).setCount(4);
-            redSquare.drinksArray.get(2).setCount(6);
-            redSquare.drinksArray.get(3).setCount(10);
-            redSquare.drinksArray.get(4).setCount(7);
-        }
+        redSquare = new VendingMachine();
+        redSquare.initVendingMachine(redSquare, 3,4,5,6,7);
 
         do {
             new Menu().drawVendingMachineStatMenu(redSquare);
+
+            enterChoice = new Scanner(System.in);
             choice = enterChoice.nextInt();
 
             switch (choice) {
@@ -61,19 +50,19 @@ public class Main {
                     System.out.println();
                     break;
                 case 2:
-                    redSquare.giveDrink(redSquare.drinksArray.get(0));
+                    redSquare.giveDrink(redSquare.getDrinksList().get(0));
                     break;
                 case 3:
-                    redSquare.giveDrink(redSquare.drinksArray.get(1));
+                    redSquare.giveDrink(redSquare.getDrinksList().get(1));
                     break;
                 case 4:
-                    redSquare.giveDrink(redSquare.drinksArray.get(2));
+                    redSquare.giveDrink(redSquare.getDrinksList().get(2));
                     break;
                 case 5:
-                    redSquare.giveDrink(redSquare.drinksArray.get(3));
+                    redSquare.giveDrink(redSquare.getDrinksList().get(3));
                     break;
                 case 6:
-                    redSquare.giveDrink(redSquare.drinksArray.get(4));
+                    redSquare.giveDrink(redSquare.getDrinksList().get(4));
                     break;
                 default:
                     System.out.println("    *** Выбранный пунк меню отсутствует! ***\n");

@@ -38,7 +38,7 @@ public class CalculatorMenu {
         System.out.println(" 2 - Сложение");
         System.out.println(" 3 - Умножение");
         System.out.println(" 4 - Деление");
-        System.out.println(" 5 - Остаток от деления");
+        System.out.println(" 5 - Процент от числа");
         System.out.println("---------------------------------------------------------");
         System.out.println(" 0 - Выход");
         System.out.println("---------------------------------------------------------");

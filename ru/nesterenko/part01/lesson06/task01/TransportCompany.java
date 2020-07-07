@@ -15,8 +15,8 @@ public class TransportCompany implements Delivering {
 
         private List<Transport> transportList = new ArrayList<>();
 
-        public Transport getTransport(Transport transport) {
-                return transportList.add(transport);
+        public List<Transport> getTransportList() {
+                return transportList;
         }
 
         public TransportCompany() {

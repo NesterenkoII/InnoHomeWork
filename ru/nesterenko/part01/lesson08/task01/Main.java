@@ -25,33 +25,83 @@ public class Main {
                         System.out.println("\t\tВыход ...");
                         break;
                     case 1:
-                        System.out.println("        Результат:  " + calculator.getNumber1() + " - "
-                                + calculator.getNumber2() + " = "
-                                + CalculatorMethods.subtraction(calculator.getNumber1(), calculator.getNumber2()));
+                        if (calculator.getNumber1() * 10 % 10 != 0 || calculator.getNumber2() * 10 % 10 != 0) {
+                            System.out.println("        Результат:  "
+                                    + calculator.getNumber1() + " - "
+                                    + calculator.getNumber2() + " = "
+                                    + CalculatorMethods.subtraction(calculator.getNumber1(),
+                                                                    calculator.getNumber2()));
+                        } else {
+                            System.out.println("        Результат:  "
+                                    + ((int)calculator.getNumber1()) + " - "
+                                    + ((int)calculator.getNumber2()) + " = "
+                                    + CalculatorMethods.subtraction((int)calculator.getNumber1(),
+                                                                    (int)calculator.getNumber2()));
+                        }
                         System.out.println();
                         break;
                     case 2:
-                        System.out.println("        Результат:  " + calculator.getNumber1() + " + "
-                                + calculator.getNumber2() + " = "
-                                + CalculatorMethods.summation(calculator.getNumber1(), calculator.getNumber2()));
+                        if (calculator.getNumber1() * 10 % 10 != 0 || calculator.getNumber2() * 10 % 10 != 0) {
+                            System.out.println("        Результат:  "
+                                    + calculator.getNumber1() + " + "
+                                    + calculator.getNumber2() + " = "
+                                    + CalculatorMethods.summation(calculator.getNumber1(),
+                                                                  calculator.getNumber2()));
+                        } else {
+                            System.out.println("        Результат:  "
+                                    + ((int)calculator.getNumber1()) + " + "
+                                    + ((int)calculator.getNumber2()) + " = "
+                                    + CalculatorMethods.summation((int)calculator.getNumber1(),
+                                                                  (int)calculator.getNumber2()));
+                        }
                         System.out.println();
                         break;
                     case 3:
-                        System.out.println("        Результат:  " + calculator.getNumber1() + " * "
-                                + calculator.getNumber2() + " = "
-                                + CalculatorMethods.multiplication(calculator.getNumber1(), calculator.getNumber2()));
+                        if (calculator.getNumber1() * 10 % 10 != 0 || calculator.getNumber2() * 10 % 10 != 0) {
+                            System.out.println("        Результат:  "
+                                    + calculator.getNumber1() + " * "
+                                    + calculator.getNumber2() + " = "
+                                    + CalculatorMethods.multiplication(calculator.getNumber1(),
+                                                                       calculator.getNumber2()));
+                        } else {
+                            System.out.println("        Результат:  "
+                                    + ((int)calculator.getNumber1()) + " * "
+                                    + ((int)calculator.getNumber2()) + " = "
+                                    + CalculatorMethods.multiplication((int)calculator.getNumber1(),
+                                                                       (int)calculator.getNumber2()));
+                        }
                         System.out.println();
                         break;
                     case 4:
-                        System.out.println("        Результат:  " + calculator.getNumber1() + " / "
-                                + calculator.getNumber2() + " = "
-                                + CalculatorMethods.division(calculator.getNumber1(), calculator.getNumber2()));
+                        if (calculator.getNumber1() * 10 % 10 != 0 || calculator.getNumber2() * 10 % 10 != 0) {
+                            System.out.println("        Результат:  "
+                                    + calculator.getNumber1() + " / "
+                                    + calculator.getNumber2() + " = "
+                                    + CalculatorMethods.division(calculator.getNumber1(),
+                                                                 calculator.getNumber2()));
+                        } else {
+                            System.out.println("        Результат:  "
+                                    + ((int)calculator.getNumber1()) + " / "
+                                    + ((int)calculator.getNumber2()) + " = "
+                                    + CalculatorMethods.division(calculator.getNumber1(),
+                                                                 calculator.getNumber2()));
+                        }
                         System.out.println();
                         break;
                     case 5:
-                        System.out.println("        Результат:  " + calculator.getNumber1() + " % "
-                                + calculator.getNumber2() + " = "
-                                + CalculatorMethods.percentOfNumber(calculator.getNumber1(), calculator.getNumber2()));
+                        if (calculator.getNumber1() * 10 % 10 != 0 || calculator.getNumber2() * 10 % 10 != 0) {
+                            System.out.println("        Результат:  "
+                                    + calculator.getNumber2() + " % от "
+                                    + calculator.getNumber1() + " = "
+                                    + CalculatorMethods.percentOfNumber(calculator.getNumber1(),
+                                                                        calculator.getNumber2()));
+                        } else {
+                            System.out.println("        Результат:  "
+                                    + ((int)calculator.getNumber2()) + " % от "
+                                    + ((int)calculator.getNumber1()) + " = "
+                                    + CalculatorMethods.percentOfNumber(calculator.getNumber1(),
+                                                                        calculator.getNumber2()));
+                        }
                         System.out.println();
                         break;
                     default:

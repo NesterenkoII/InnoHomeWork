@@ -2,6 +2,7 @@ package ru.nesterenko.part01.lesson09.task01;
 
 import ru.nesterenko.part01.lesson09.task01.Animals.Bear;
 import ru.nesterenko.part01.lesson09.task01.Animals.Duck;
+import ru.nesterenko.part01.lesson09.task01.Humans.Humans;
 import ru.nesterenko.part01.lesson09.task01.Humans.OldHuman;
 import ru.nesterenko.part01.lesson09.task01.Humans.YoungHuman;
 
@@ -39,8 +40,8 @@ public class AnimalAndHumanApp {
         System.out.println(bird.getName() + " " + bird.fly());
 
         // Люди
-        OldHuman grandfather = new OldHuman();
-        YoungHuman child = new YoungHuman();
+        Humans grandfather = new OldHuman();
+        Humans child = new YoungHuman();
 
         System.out.println(grandfather.getClass() + " " + grandfather.jump());
         System.out.println(child.getClass() + " " + child.jump());

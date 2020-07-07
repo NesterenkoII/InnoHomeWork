@@ -3,6 +3,8 @@ package ru.nesterenko.part01.lesson07.newVesrsion;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.Drink;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.Menu;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.VendingDevice;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -26,13 +28,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] Args) {
 
-            int choice;
+            int choice = 1;
             VendingDevice myVendingDevice = createVendingDevice();
             Menu menu = new Menu();
             Scanner enterChoice;
-            try {
+
 
                 do {
+                    try {
                     menu.drawVendingMachineStatMenu(myVendingDevice);
                     enterChoice = new Scanner(System.in);
                     choice = enterChoice.nextInt();
@@ -65,10 +68,11 @@ public class Main {
                             System.out.println("    *** Выбранный пунк меню отсутствует! ***\n");
                     }
 
+                    } catch (InputMismatchException e) {
+                        System.out.println("Введены некорректные данные! Аварийное завершение программы!");
+                    }
                 } while (choice != 0);
-            } catch (Exception e) {
-            System.out.println("Введены некорректные данные! Аварийное завершение программы!");
-        }
+
     }
         private static VendingDevice createVendingDevice() {
             VendingDevice device = new VendingDevice();

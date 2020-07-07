@@ -34,29 +34,29 @@ public class Main {
         dhl.addTransport(new Bus("Ikarus", "I-33"));
 
         System.out.printf("<%s> %s %s: услуга по доставке стоит - %s\n",
-                dhl.getTransport(0).getClass().getSimpleName(),
-                dhl.getTransport(0).getCarBrand(),
-                dhl.getTransport(0).getCarModel(),
-                dhl.getTransport(0).getOneKmUsingCost());
+                dhl.getTransportList().get(0).getClass().getSimpleName(),
+                dhl.getTransportList().get(0).getCarBrand(),
+                dhl.getTransportList().get(0).getCarModel(),
+                dhl.getTransportList().get(0).getOneKmUsingCost());
         System.out.printf("<%s> %s %s: услуга по доставке стоит - %s\n",
-                dhl.getTransport(1).getClass().getSimpleName(),
-                dhl.getTransport(1).getCarBrand(),
-                dhl.getTransport(1).getCarModel(),
-                dhl.getTransport(1).getOneKmUsingCost());
-        dhl.getTransport(0).getClass();
+                dhl.getTransportList().get(1).getClass().getSimpleName(),
+                dhl.getTransportList().get(1).getCarBrand(),
+                dhl.getTransportList().get(1).getCarModel(),
+                dhl.getTransportList().get(1).getOneKmUsingCost());
+        dhl.getTransportList().get(0).getClass();
 
         System.out.println(dhl.deliver());
 
-        dhl.getTransport(0).setOneKmUsingCost(100);
-        dhl.getTransport(1).setOneKmUsingCost(200);
+        dhl.getTransportList().get(0).setOneKmUsingCost(100);
+        dhl.getTransportList().get(1).setOneKmUsingCost(200);
         System.out.println(dhl.getDeliverPrice(30));
         System.out.println(dhl.getDeliverPrice(40));
 
-        System.out.println(dhl.getTransport(0).getOneKmUsingCost());
-        System.out.println(dhl.getTransport(1).getOneKmUsingCost());
+        System.out.println(dhl.getTransportList().get(0).getOneKmUsingCost());
+        System.out.println(dhl.getTransportList().get(1).getOneKmUsingCost());
 
-        dhl.getTransport(0).iAmGoing(1);
-        dhl.getTransport(1).iAmGoing(2);
+        dhl.getTransportList().get(0).iAmGoing(1);
+        dhl.getTransportList().get(1).iAmGoing(2);
 
         //System.out.println(dhl.getTransport(0));
     }

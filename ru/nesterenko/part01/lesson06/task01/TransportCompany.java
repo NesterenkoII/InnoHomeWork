@@ -13,22 +13,27 @@ import java.util.List;
  */
 public class TransportCompany implements Delivering {
 
-        List <Transport> transports = new ArrayList<Transport>();
+        private List<Transport> transportList = new ArrayList<>();
 
-        void addTransport(Transport transport) {
-                this.transports.add(transport);
+        public Transport getTransport(Transport transport) {
+                return transportList.add(transport);
+        }
+
+        public TransportCompany() {
+                List<Transport> transports = new ArrayList<>();
+        }
+
+        public void addTransport(Transport transport) {
+                this.transportList.add(transport);
         }
 
         @Override
-        public double getDeliverPrice(Transport transport, double distance) {
-                if (transport.getClass() == Bus.class) {
-                        return ((Bus) transport).getOneKmUsingCost() * distance;
-                }
+        public String deliver() {
+                return "Транспортируем грузы и людей";
+        }
 
-                if (transport.getClass() == Truck.class) {
-                        return ((Truck) transport).getOneKmUsingCost() * distance;
-                }
-
-                return 0;
+        @Override
+        public String getDeliverPrice(double distance) {
+                        return String.valueOf(this.getDeliverPrice(distance));
         }
 }

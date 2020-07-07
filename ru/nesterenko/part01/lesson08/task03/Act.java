@@ -14,7 +14,7 @@ public class Act {
     private String contractNumber;
     private Date contractDate;
     private String actObject;
-
+// TODO вынести
     public void setContractNumber(String contractNumber) {
         this.contractNumber = contractNumber;
     }

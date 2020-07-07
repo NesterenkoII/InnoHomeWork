@@ -6,24 +6,40 @@ package ru.nesterenko.part01.lesson06.task01.transport;
  * @version 1.0 18 June 2020
  * @author  Igor Nesterenko
  */
-public class Transport {
+public abstract class Transport implements Driving{
 
-    private final String CAR_BRAND;
-    private final String CAR_MODEL;
+    private final String carBrand;
+    private final String carModel;
+    private Double oneKmUsingCost = 0.0;
 
+
+    public Transport(String carBrand, String carModel, Double oneKmUsingCost) {
+
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.oneKmUsingCost = oneKmUsingCost;
+    }
 
     public Transport(String carBrand, String carModel) {
 
-        this.CAR_BRAND = carBrand;
-        this.CAR_MODEL = carModel;
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.oneKmUsingCost = oneKmUsingCost;
     }
 
-    public String getCAR_BRAND() {
-        return CAR_BRAND;
+    public void setOneKmUsingCost(double oneKmUsingCost) {
+        this.oneKmUsingCost = oneKmUsingCost;
     }
 
-    public String getCAR_MODEL() {
-        return CAR_MODEL;
+    public Double getOneKmUsingCost() {
+        return oneKmUsingCost;
     }
 
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
 }

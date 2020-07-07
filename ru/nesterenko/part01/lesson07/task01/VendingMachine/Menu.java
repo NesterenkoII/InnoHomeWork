@@ -1,12 +1,11 @@
 package ru.nesterenko.part01.lesson07.task01.VendingMachine;
 
-
 /**
  * Класс реализует отрисовку меню вендингого аппарата
  * В автоматическом режиме прорисовывает элементы меню
  * в зависимости от загрузки автомата
  *
- * @version 2.2 22 June 2020
+ * @version 2.3 24 June 2020
  * @author  Igor Nestsenko
  */
 public class Menu {

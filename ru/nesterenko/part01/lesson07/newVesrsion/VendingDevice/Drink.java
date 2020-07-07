@@ -1,13 +1,13 @@
-package ru.nesterenko.part01.lesson07.task01.VendingMachine;
+package ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice;
 
 /**
  * Перечисление напитков, кодержащее количество, цену и методы для извлечения
  * и установки значений для данных полей
  *
- * @version 2.1 24 June 2020
+ * @version 2.0 22 June 2020
  * @author  Igor Nesterenko
  */
-public enum Drinks {
+public enum Drink {
         FANTA(29),
         PEPSI(33),
         SPRIT(35),
@@ -17,7 +17,7 @@ public enum Drinks {
         private double price;
         private int count = 0;
 
-        Drinks(double price) {
+        Drink(double price) {
             this.price = price;
         }
 

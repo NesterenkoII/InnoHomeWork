@@ -25,13 +25,13 @@ public class VendingMachine {
         drinksList.add(4,Drinks.WATER);
     }
 
-    public void initVendingMachine(VendingMachine vendingMachine,
+    public void initVendingMachine(VendingMachine vendingDevice,
                                    int fanta, int sprit, int juice, int pepsi, int water) {
-        vendingMachine.addDrink(vendingMachine.getDrinksList().get(0),9);
-        vendingMachine.addDrink(vendingMachine.getDrinksList().get(1),5);
-        vendingMachine.addDrink(vendingMachine.getDrinksList().get(2),1);
-        vendingMachine.addDrink(vendingMachine.getDrinksList().get(3),0);
-        vendingMachine.addDrink(vendingMachine.getDrinksList().get(4),7);
+        vendingDevice.addDrink(vendingDevice.getDrinksList().get(0),fanta);
+        vendingDevice.addDrink(vendingDevice.getDrinksList().get(1),sprit);
+        vendingDevice.addDrink(vendingDevice.getDrinksList().get(2),juice);
+        vendingDevice.addDrink(vendingDevice.getDrinksList().get(3),pepsi);
+        vendingDevice.addDrink(vendingDevice.getDrinksList().get(4),water);
     }
 
     public List<Drinks> getDrinksList() {

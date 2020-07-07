@@ -8,7 +8,7 @@ package ru.nesterenko.part01.lesson08.task03;
  */
 public class DocumentConverter {
 
-    public static Act contractToAct(Contract contract, Act act) {
+    public static Act contractToAct(Contract contract, Act act) { //TODO убрать
 
         act.setContractNumber(contract.getContractNumber());
         act.setContractDate(contract.getContractDate());

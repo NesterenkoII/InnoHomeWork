@@ -22,33 +22,42 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TransportCompany DHL;
+        TransportCompany dhl;
         double profit = 0;
-        double distanceForTruck;
-        double distanceForBus;
+        double distance;
         {
-            distanceForTruck = 1500.0;
-            distanceForBus = 3000.0;
+            distance = 1500.0;
         }
 
-        DHL = new TransportCompany();
+        dhl = new TransportCompany();
+        dhl.addTransport(new Truck("Man", "M-55"));
+        dhl.addTransport(new Bus("Ikarus", "I-33"));
 
-        DHL.transports.add(0, new Truck("MAN", "M11", 79));
-        DHL.transports.add(1, new Bus("ISUZU", "I22", 48, 37));
+        System.out.printf("<%s> %s %s: услуга по доставке стоит - %s\n",
+                dhl.getTransport(0).getClass().getSimpleName(),
+                dhl.getTransport(0).getCarBrand(),
+                dhl.getTransport(0).getCarModel(),
+                dhl.getTransport(0).getOneKmUsingCost());
+        System.out.printf("<%s> %s %s: услуга по доставке стоит - %s\n",
+                dhl.getTransport(1).getClass().getSimpleName(),
+                dhl.getTransport(1).getCarBrand(),
+                dhl.getTransport(1).getCarModel(),
+                dhl.getTransport(1).getOneKmUsingCost());
+        dhl.getTransport(0).getClass();
 
-        System.out.print(DHL.transports.get(0).getCAR_BRAND() + " - "
-                            + DHL.transports.get(0).getCAR_MODEL() + ":  ");
-        ((Truck)DHL.transports.get(0)).iAmGoing(distanceForTruck);
-        System.out.println("Заработал: " + DHL.getDeliverPrice(DHL.transports.get(0), distanceForTruck) + " рублей\n");
+        System.out.println(dhl.deliver());
 
-        System.out.print(DHL.transports.get(1).getCAR_BRAND() + " - "
-                            + DHL.transports.get(1).getCAR_MODEL() + ":  ");
-        ((Bus)DHL.transports.get(1)).iAmGoing(distanceForBus);
-        System.out.println("Заработал: " + DHL.getDeliverPrice(DHL.transports.get(1), distanceForBus) + " рублей");
+        dhl.getTransport(0).setOneKmUsingCost(100);
+        dhl.getTransport(1).setOneKmUsingCost(200);
+        System.out.println(dhl.getDeliverPrice(30));
+        System.out.println(dhl.getDeliverPrice(40));
 
-        profit += DHL.getDeliverPrice(DHL.transports.get(0), distanceForTruck)
-                + DHL.getDeliverPrice(DHL.transports.get(1), distanceForBus);
+        System.out.println(dhl.getTransport(0).getOneKmUsingCost());
+        System.out.println(dhl.getTransport(1).getOneKmUsingCost());
 
-        System.out.println("\nОбщая прибыль компании составила: " + profit + " рублей\n");
+        dhl.getTransport(0).iAmGoing(1);
+        dhl.getTransport(1).iAmGoing(2);
+
+        //System.out.println(dhl.getTransport(0));
     }
 }

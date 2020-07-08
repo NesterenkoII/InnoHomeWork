@@ -9,12 +9,13 @@ package ru.nesterenko.part01.lesson12.task03;
  */
 public class MyExceptionDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
 
         try {
             int number = 2 / 0;
-        } catch (MyException exception) {
-            throw new MyException();
+        }
+        catch (ArithmeticException exception) {
+            throw new MyException("Деление на <0>");
         }
     }
 }

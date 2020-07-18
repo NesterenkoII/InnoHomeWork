@@ -1,5 +1,7 @@
 package ru.nesterenko.part01.lesson07.newVesrsion;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.Drink;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.Menu;
 import ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice.VendingDevice;
@@ -8,6 +10,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * @lesson07
  * Реализовать программу «Вендинговый автомат», которая позволит:
  *
  * Посмотреть меню напитков;
@@ -22,10 +25,19 @@ import java.util.Scanner;
  * Для хранения напитков предлагается использовать enum. У напитка должна быть цена и название.
  * Для упрощения считаем, что количество напитков не ограничено.
  *
- * @author  3.1 22 June 2020
+ * @lesson14
+ * Добавить в программу "Вендинговый автомат" журналирование событий, при этом стоит указать различные
+ * уровни логирования, как информационного уровня, так и предупреждения и ошибки.
+ * Настроить сбор логов в файл.
+ * Фреймворк логирования - на ваш выбор.
+ *
+ * @author  4.0 18 July 2020
  * @author  Igor Nesterenko
  */
 public class Main {
+
+    private static final Logger log = LogManager.getLogger(Main.class.getName());
+
     public static void main(String[] Args) {
 
             int choice = 1;
@@ -42,7 +54,7 @@ public class Main {
 
                     switch (choice) {
                         case 0:
-                            System.out.println("Выход ...");
+                            log.info("Выход ...");
                             break;
                         case 1:
                             System.out.print("         Введите сумму: ");
@@ -65,11 +77,11 @@ public class Main {
                             myVendingDevice.giveDrink(myVendingDevice.getDrinksList().get(4));
                             break;
                         default:
-                            System.out.println("    *** Выбранный пунк меню отсутствует! ***\n");
+                            log.info("Нет такого пункта меню");
                     }
 
                     } catch (InputMismatchException e) {
-                        System.out.println("Введены некорректные данные! Аварийное завершение программы!");
+                        log.fatal("Аварийное завершение работы автомата!!!");
                     }
                 } while (choice != 0);
 

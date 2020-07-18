@@ -1,6 +1,9 @@
 package ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Класс реализует отрисовку меню вендингого аппарата
  * В автоматическом режиме прорисовывает элементы меню

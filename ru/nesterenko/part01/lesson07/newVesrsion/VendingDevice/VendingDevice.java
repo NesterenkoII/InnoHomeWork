@@ -1,5 +1,7 @@
 package ru.nesterenko.part01.lesson07.newVesrsion.VendingDevice;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,8 @@ import java.util.List;
  * @author  Igor Nesterenko
  */
 public class VendingDevice {
+
+    private static final Logger log = LogManager.getLogger(VendingDevice.class.getName());
 
     private static double deposit = 0;
     private final List<Drink> drinksList;
@@ -39,11 +43,11 @@ public class VendingDevice {
 
     public void giveDrink(Drink drink) {
         if (!isDrinkAvailability(drink)) {
-            System.out.println("*** Напитки данной категории закончились! ***");
+            log.warn("<Напитки данной категории закончились>");
         } else if (!isMoneyAvailability(drink)) {
             System.out.println("*** Недостаточно средств. Пополните баланс! ***");
         } else {
-            System.out.println("Выдан напиток: " + drink.name());
+            log.info("<Напиток выдан>");
             deposit -= drink.getPrice();
             drink.setCount(drink.getCount() - 1);
         }
@@ -52,8 +56,9 @@ public class VendingDevice {
     public void addMoney(double moneyCount) {
         if (!(moneyCount < 0)) {
             deposit += moneyCount;
+            log.info("<Депозит пополнен>");
         } else {
-            System.out.println("Некорректный ввод!");
+            log.error("<Некорректный ввод>");
         }
     }
 

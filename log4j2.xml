@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status = "WARN">
+
+    <appenders>
+        <File name="fileLog" fileName="error.log">
+            <PatternLayout pattern="%d [%-5p] (%F:%L) - %m%n"/>
+        </File>
+
+        <Console name="consoleLog" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd.mm.YYYY HH:mm:ss.s} [%-2p] - %m%n"/>
+        </Console>
+    </appenders>
+
+    <loggers>
+        <Logger name="com.test.app" level="info" additivity="false">
+            <appender-ref ref="consoleLog" level="info"/>
+            <appender-ref ref="fileLog" level="warn"/>
+        </Logger>>
+
+        <Root level="trace">
+            <appender-ref ref="fileLog" level="warn"/>
+            <appender-ref ref="consoleLog" level="info"/>
+        </Root>
+    </loggers>
+
+</configuration>

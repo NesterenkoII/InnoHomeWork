@@ -13,7 +13,7 @@ import static ru.nesterenko.part01.lesson15.task01.FileManager.*;
  * Дополнительное задание (необязательно): программа должна следить за глубиной рекурсии,
  * сдвигая название файла/каталога на соответствующее количество пробелов.
  *
- * @version 1.0 15 July 2020
+ * @version 2.0 15 July 2020
  * @author  NII
  */
 public class DirectoryDemo {
@@ -60,6 +60,9 @@ public class DirectoryDemo {
                     break;
                 case 10:
                     copyFolder(duringDirectory);
+                    break;
+                case 11:
+                    recursionDirLook(duringDirectory, 0);
                     break;
                 case 0:
                     System.out.println("Exit ...");

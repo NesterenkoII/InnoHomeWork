@@ -1,7 +1,5 @@
 package ru.nesterenko.part01.lesson13.task01;
 
-import static ru.nesterenko.part01.lesson13.task01.Food.*;
-
 /**
  * Написать программу "воспитанный ребенок".
  *
@@ -21,7 +19,7 @@ import static ru.nesterenko.part01.lesson13.task01.Food.*;
  */
 public class MotherDemo {
 
-    public static void main(String[] args) throws ChildDontLikeFoodException {
+    public static void main(String[] args) {
 
         Child ivan = new Child();
 
@@ -30,6 +28,8 @@ public class MotherDemo {
                 ivan.eat(food);
             } catch (ChildDontLikeFoodException ex) {
                 System.out.println(ex.getMessage());
+            } finally {
+                System.out.println("Спасибо, мама!");
             }
         }
     }

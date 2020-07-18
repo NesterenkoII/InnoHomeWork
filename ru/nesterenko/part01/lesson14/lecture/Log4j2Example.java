@@ -11,5 +11,7 @@ public class Log4j2Example {
     public static void main(String[] args) {
         log.info("Hello World!");
         log.error("Моя первая ошибка", new Exception("ERR!"));
+        log.debug("ggg");
+
     }
 }

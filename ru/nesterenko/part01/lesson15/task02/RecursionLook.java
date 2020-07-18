@@ -14,7 +14,7 @@ public class RecursionLook {
                     System.out.print(" ");
                 }
                 System.out.println(temp.getName() + "/");
-                recursionLook(temp.getAbsolutePath(), depth + 1);
+                recursionLook(temp.getAbsolutePath(), depth + 2);
             } else {
                 for (int i = 0; i <= depth; i++) {
                     System.out.print(" ");

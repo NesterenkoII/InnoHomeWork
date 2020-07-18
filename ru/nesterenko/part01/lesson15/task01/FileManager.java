@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class FileManager {
 
-    private static int recursionDepth = 0;
-
     public static void createFolder(StringBuilder path) {
         System.out.print("Enter folder name: ");
         Scanner enterFolderName = new Scanner(System.in);
@@ -28,10 +26,8 @@ public class FileManager {
         File folder = new File(path + folderName);
         if (!folder.isDirectory()) {
             System.out.println("<It's not a folder>");
-            return;
         } else if (!folder.exists()) {
             System.out.println("File not found");
-            return;
         } else if (folder.listFiles().length == 0) {
             System.out.printf("%s deleted ...\n", folder.getName());
             folder.delete();
@@ -81,40 +77,25 @@ public class FileManager {
         String newFileName = enterString.nextLine();
         File newFolder = new File(path + newFileName);
         newFolder.mkdir();
-
-        recursionDirLook(sampleFolder.getAbsolutePath(),newFolder.getAbsolutePath());
     }
 
-    public static void recursionDirLook (String fromDir, String toDir) throws IOException {
-        File from = new File(fromDir);
-        File to = new File(toDir);
+    public static void recursionDirLook(StringBuilder pathSource, int depth) {
+        File dir = new File(pathSource.toString());
 
-        if (from.exists() && from.isDirectory() && !to.exists()) {
-            from.mkdir();
-
-            String innerSampleFolderName;
-            String innerNewFolderName;
-
-            File swapFile;
-            for (File file: from.listFiles()) {
-                recursionDepth++;
-                innerSampleFolderName = file.getAbsolutePath() + "/" + file.getName();
-                innerNewFolderName = to.getAbsolutePath() + "/" + file.getName();
-                swapFile = new File(to.getAbsolutePath() + "/" + file.getName());
-                for (int i = 0; i < recursionDepth; i++) {
+        for (File temp: dir.listFiles()) {
+            if (temp.isDirectory()) {
+                for (int i = 0; i <= depth; i++) {
                     System.out.print(" ");
                 }
-                System.out.printf("%s%n", file.getName());
-
-
-                if(file.isDirectory()) {
-                    recursionDirLook(file.getAbsolutePath(), to.getAbsolutePath());
-                } else {
-                    Files.copy(from.toPath(), to.toPath());
+                System.out.println(temp.getName() + "/");
+                recursionDirLook(new StringBuilder(temp.getAbsolutePath()), depth + 2);
+            } else {
+                for (int i = 0; i <= depth; i++) {
+                    System.out.print(" ");
                 }
+                System.out.println(temp.getName());
             }
-        } else System.out.println("File not found");
-
+        }
     }
 
     public static void createFile(StringBuilder path) throws IOException {
@@ -185,6 +166,7 @@ public class FileManager {
                 "8 - rename file\n" +
                 "9 - copy file\n" +
                 "10 - copy folder\n" +
+                "11 - catalog tree\n" +
                 "0 - exit");
     }
 }

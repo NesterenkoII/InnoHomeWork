@@ -26,6 +26,6 @@ public class CensorDemo {
         text = reader.readLine();
 
         System.out.printf("Исправленный текст: %s\n"
-                , text.replaceAll("\\b[Бб]+[Яя]+[Кк]+[Аа]+\\b","<Вырезано цензурой>"));
+                , text.replaceAll("\\b[Бб][Яя][Кк][Аа]\\b","<Вырезано цензурой>"));
     }
 }

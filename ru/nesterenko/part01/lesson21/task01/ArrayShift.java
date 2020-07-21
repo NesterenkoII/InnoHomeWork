@@ -1,5 +1,16 @@
 package ru.nesterenko.part01.lesson21.task01;
 
+/**
+ * Дан двумерный массив. Задача – написать метод
+ * public void toLeft() {}
+ * 1.Пройти с 1-ой до последней строки
+ * 2.Пройти с 1-го до предпоследнего элемента
+ * 3.В текущую ячейку поместить значение следующей
+ * 4.Последнему элементу присвоить 0
+ *
+ * @version 1.0 21 July 2020
+ * @author NII
+ */
 public class ArrayShift {
     public static void main(String[] args) {
         int[][] array = {
@@ -8,12 +19,12 @@ public class ArrayShift {
         };
         System.out.println("Исходный массив:");
         printArray(array);
-        arrayShift(array);
+        toLeft(array);
         System.out.println("Измененный массив:");
         printArray(array);
     }
 
-    public static void arrayShift(int [][] arr) {
+    public static void toLeft(int [][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length - 1; j++) {
                 arr[i][j] = arr[i][j + 1];

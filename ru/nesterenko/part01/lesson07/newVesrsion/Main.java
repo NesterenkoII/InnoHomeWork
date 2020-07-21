@@ -54,7 +54,7 @@ public class Main {
 
                     switch (choice) {
                         case 0:
-                            log.info("Выход ...");
+                            log.info("<Выход ...>");
                             break;
                         case 1:
                             System.out.print("         Введите сумму: ");
@@ -77,11 +77,11 @@ public class Main {
                             myVendingDevice.giveDrink(myVendingDevice.getDrinksList().get(4));
                             break;
                         default:
-                            log.info("Нет такого пункта меню");
+                            log.info("<Нет такого пункта меню>");
                     }
 
                     } catch (InputMismatchException e) {
-                        log.fatal("Аварийное завершение работы автомата!!!");
+                        log.fatal("<<<Аварийное завершение работы автомата!!!>>>");
                     }
                 } while (choice != 0);
 

@@ -45,7 +45,7 @@ public class VendingDevice {
         if (!isDrinkAvailability(drink)) {
             log.warn("<Напитки данной категории закончились>");
         } else if (!isMoneyAvailability(drink)) {
-            System.out.println("*** Недостаточно средств. Пополните баланс! ***");
+            log.info("<Недостаточно средств, пополните баланс>");
         } else {
             log.info("<Напиток выдан>");
             deposit -= drink.getPrice();

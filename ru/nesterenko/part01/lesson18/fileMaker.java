@@ -3,7 +3,7 @@ package ru.nesterenko.part01.lesson18;
 import java.io.*;
 import java.util.Scanner;
 
-public class FileManager {
+public class fileMaker {
 
     public static void createFile(String path) throws IOException {
         File file = new File(path);

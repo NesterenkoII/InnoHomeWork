@@ -16,7 +16,7 @@ public class Order {
         productList.add(product);
     }
 
-    public void printOrder() {
+    public void printOrder() { // TODO вынести в отдельный класс обработки заказов/чеков
         BigDecimal totalPrice = new BigDecimal("0.000");
         System.out.printf("%1$s\t%3$12s\t%2$11s\t%4$12s\n", "Наименование", "Количество", "Цена", "Стоимость");
         System.out.println("========================================================");

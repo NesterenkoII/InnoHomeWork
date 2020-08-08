@@ -1,8 +1,7 @@
 package ru.nesterenko.part01.lesson18;
 
 import java.io.IOException;
-
-import static ru.nesterenko.part01.lesson18.FileManager.*;
+import static ru.nesterenko.part01.lesson18.fileMaker.*;
 
 /**
  * Написать программу, которая копирует файл с одной кодировкой в файл с другой.

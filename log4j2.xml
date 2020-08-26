@@ -18,8 +18,8 @@
         </Logger>>
 
         <Root level="trace">
-            <appender-ref ref="fileLog" level="warn"/>
             <appender-ref ref="consoleLog" level="info"/>
+            <appender-ref ref="fileLog" level="warn"/>
         </Root>
     </loggers>
 

@@ -57,13 +57,13 @@ public class ShopBasket implements Basket {
     }
 
     @Override
-    public int getProductQuantity(String product) { //TODO test todohi
-        for (Product p : productList) {
-            if (p.getName().equals(product)) {
-                return p.getQuantity();
-            }
+    public int getProductQuantity(String productName) {
+        Product product = searchProduct(productName);
+        if (product != null) {
+            return product.getQuantity();
+        } else {
+            return 0;
         }
-        return 0;
     }
 
     private Product searchProduct(String name) {

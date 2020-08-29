@@ -4,56 +4,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopBasket implements Basket {
-    private ArrayList<Product> productList;
+    private final ArrayList<Product> productList;
 
     ShopBasket(){
         productList = new ArrayList<>();
     }
 
     @Override
-    public void addProduct(String product, int quantity) {
-        int index = 0;
-        for (Product p : productList) {
-            if (p.getName().equals(product)) {
-                productList.set(index, new Product(product, p.getQuantity() + quantity));
-                return;
-            }
-            index++;
+    public void addProduct(String name, int quantity) {
+        // Находим нужную строку в корзине
+        Product product = searchProduct(name);
+        if (product == null) {
+            product = new Product(name, 0);
+            productList.add(product);
         }
-        productList.add(new Product(product,quantity));
+
+        // Добавляем нужное количество
+        product.setQuantity(product.getQuantity() + quantity);
     }
 
     @Override
-    public void removeProduct(String product) {
-        int index = 0;
-        for (Product p : productList) {
-            if (p.getName().equals(product)) {
-                break;
-            }
-            index++;
-        }
-        productList.remove(index);
+    public void removeProduct(String productName) {
+        productList.removeIf(product -> product.getName().equals(productName));
     }
 
     @Override
-    public void updateProduct(String product, int quantity) {
-        int index = 0;
-        for (Product p : productList) {
-            if (p.getName().equals(product)) {
-                productList.set(index, new Product(product, quantity));
-                break;
-            }
-            index++;
+    public void updateProduct(String productName, int quantity) {
+        Product product = searchProduct(productName);
+        if (product != null) {
+            product.setQuantity(quantity);
+        } else {
+            System.out.println("No such product");
         }
     }
 
     @Override
     public void clear() {
-            int index = productList.size() - 1;
-            while (!productList.isEmpty()) {
-                productList.remove(index);
-                index--;
-            }
+            productList.clear();
         }
 
     @Override
@@ -70,12 +57,21 @@ public class ShopBasket implements Basket {
     }
 
     @Override
-    public int getProductQuantity(String product) {
+    public int getProductQuantity(String product) { //TODO test todohi
         for (Product p : productList) {
             if (p.getName().equals(product)) {
                 return p.getQuantity();
             }
         }
         return 0;
+    }
+
+    private Product searchProduct(String name) {
+        for (Product p : productList) {
+            if (p.getName().equals(name)) {
+                return p;
+            }
+        }
+        return null;
     }
 }

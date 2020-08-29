@@ -31,18 +31,18 @@ public class Main {
         shopBasket.addProduct("iPhone11", 4);
         shopBasket.addProduct("iPhone11", 4);
         shopBasket.addProduct("iPhoneSE", 3);
-        printProucts(shopBasket);
+        printProducts(shopBasket);
         shopBasket.removeProduct("iPhone5");
-        printProucts(shopBasket);
+        printProducts(shopBasket);
         shopBasket.updateProduct("iPhone11", 10);
-        printProucts(shopBasket);
+        printProducts(shopBasket);
         System.out.println("iPhoneSE: " + shopBasket.getProductQuantity("iPhoneSE"));
         System.out.println("iPhoneS: " + shopBasket.getProductQuantity("iPhoneS"));
         shopBasket.clear();
-        printProucts(shopBasket);
+        printProducts(shopBasket);
     }
 
-    public static void printProucts(ShopBasket shopBasket) {
+    public static void printProducts(ShopBasket shopBasket) {
         for (String str : shopBasket.getProducts()) {
             System.out.println(str);
         }

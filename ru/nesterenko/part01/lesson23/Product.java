@@ -3,7 +3,7 @@ package ru.nesterenko.part01.lesson23;
 import java.util.Comparator;
 
 public class Product {
-    private String name;
+    private final String name;
     private int quantity;
 
     Product(String name, int quantity) {
@@ -13,6 +13,10 @@ public class Product {
 
     String getName() {
         return this.name;
+    }
+
+    void setQuantity (int quantity) {
+        this.quantity = quantity;
     }
 
     int getQuantity() {
